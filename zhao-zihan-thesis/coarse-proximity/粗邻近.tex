@@ -1,0 +1,301 @@
+\def\CTeXPreproc{Created by ctex v0.2.13, don't edit!}\def\CTeXPreproc{Created by ctex v0.2.13, don't edit!}
+\def\CTeXPreproc{Created by ctex v0.2.13, don't edit!}
+\def\az{\alpha}
+\documentclass[12pt,oneside]{cctbook}
+\usepackage{ccmap}
+\usepackage{pifont,color}
+\usepackage{amssymb,amsmath}
+\usepackage{fancyhdr}
+\input xy
+\xyoption{all} \headsep 0.5 true cm \topmargin 0pt \oddsidemargin
+12pt \textwidth 15.3 true cm \textheight 22.6true cm
+\parindent 2\ccwd
+\renewcommand{\baselinestretch}{1.0}
+\def\vz{\varepsilon}
+\def\tri{\bigtriangleup}
+\def \sect #1{\section*{\centerline{\large \bf \heiti #1}}}
+\def \bigjt #1#2{\ \tabcolsep=2pt\begin {tabular}{c}#1\cr
+\newtheorem{definition}{\bf{定义}}[section]
+\newtheorem{proposition}{\hspace{2em}{\bf{命题}}}[section]
+\newtheorem{property}{\bf{性质}}[section]
+\newtheorem{theorem}{\bf{定理}}
+\newtheorem{lemma}{\bf{引理}}
+\newtheorem{corollary}[theorem]{\hspace{2em}{\bf{推论}}}
+\newtheorem{axiom}{\hspace{2em}{\bf{公理}}}[section]
+\newtheorem{exercise}{\hspace{2em}{\bf{习题}}}[section]
+\newtheorem{question}{\hspace{2em}{\bf{问题}}}
+\newtheorem{example}{\bf{例}}
+\newtheorem{notation}{\hspace{2em}{\bf{记号}}}
+\newtheorem{remark}{\hspace{2em}{\bf{注记}}}
+\renewenvironment{proof}[1][~ 证明]{\textbf{#1:~~~}}{\hfill\hspace{1cm}$\square$}
+\usepackage{titlesec}
+\numberwithin{equation}{section}
+\renewcommand{\refname}{\centerline{参考文献}}
+\setlength{\baselineskip}{1.3em}
+\setlength{\parskip}{1ex}
+\allowdisplaybreaks
+\allowdisplaybreaks[4]
+\begin{document}
+\def\dis{\displaystyle}
+\def\dlimsup{\displaystyle\limsup}
+\def\dist{\mathop\mathrm{\, dist\, }}
+\def\supp{\mathop\mathrm{\, supp\, }}
+\def\atom{\mathop\mathrm{\, atom\, }}
+\def\loc{{\mathop\mathrm{\, loc\, }}}
+\def\essinf{\mathop\mathrm{\, ess\, inf\, }}
+\def\esup{\mathop\mathrm{\, ess\, sup\, }}
+\def\fin{{\mathop\mathrm{fin}}}
+\def\lf{\left}
+\def\r{\right}
+\noalign {\vskip-4.0mm}\rightarrowfill \cr \noalign
+{\vskip-4.0mm}#2\end {tabular}\ }
+\newtheorem{definition}{\bf{定义}}[section]
+\newtheorem{proposition}{\bf{命题}}[section]
+\newtheorem{property}{\bf{性质}}[section]
+\newtheorem{theorem}{\bf{定理}}[section]
+\newtheorem{lemma}{\bf{引理}}[section]
+\newtheorem{corollary}[theorem]{\hspace{2em}{\bf{推论}}}
+\newtheorem{axiom}{\hspace{2em}{\bf{公理}}}[section]
+\newtheorem{exercise}{\hspace{2em}{\bf{习题}}}[section]
+\newtheorem{question}{\hspace{2em}{\bf{问题}}}
+\newtheorem{example}{\bf{例}}
+\newtheorem{notation}{\hspace{2em}{\bf{记号}}}
+\newtheorem{remark}{{\bf{注记}}}[section]
+\newenvironment{proof}[1][~ 证明]{\textbf{#1:~~~}}{\hfill\hspace{1cm}$\square$}
+\allowdisplaybreaks
+\allowdisplaybreaks[4]
+\begin{document}
+\begin{titlepage}
+\vspace*{1cm} \LARGE\heiti
+\begin{center}
+{\heiti\zihao{2}
+粗邻近}
+\end{center}
+\vspace*{8mm}\songti
+\begin{center}
+{\Large\zihao{4} 赵子函}
+\end{center}
+\Large\vspace*{2mm}
+\begin{center}
+(\zihao{4}安徽师范大学数学与统计学院, 安徽, 芜湖, 241000)
+\end{center}\vspace{6mm}
+\vfill\large
+\begin{center}
+{\zihao{4}安徽师范大学硕士学位论文}
+\end{center}
+\begin{center}
+{\zihao{4}二零二六年八月}
+\end{center}
+\end{titlepage}
+\newpage
+\newpage
+{\color{white}1}
+\newpage
+\setcounter{chapter}{2}
+\chapter{粗邻近}
+\vspace{0.2cm}
+\mainmatter
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\fancyhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\zihao{-4}
+\baselineskip24pt
+\textbf{定义3.1 }集合$X$上的一个$\left ( { L,M } \right )$-模糊囿结构是一个映射$\mathcal{B} :L ^ { X } \to M$\nobreak\hspace{0pt}，满足：
+
+对$\forall x\in X$\nobreak\hspace{0pt}，$\mathcal{B} \left ( { \mathcal{X}_{ \left \{ \begin{array}{l} x \end{array} \right \} } } \right )=\top$\nobreak\hspace{0pt}；
+
+对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，$A\le B$\nobreak\hspace{0pt}，$\mathcal{B} \left ( { B } \right )\le \mathcal{B} \left ( { A } \right )$\nobreak\hspace{0pt}；
+
+对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，$\mathcal{B} \left ( { A\vee B } \right )\ge \mathcal{B} \left ( { A } \right )\wedge \mathcal{B} \left ( { B } \right )$\nobreak\hspace{0pt}.
+
+则$\left ( { X,\mathcal{B} } \right )$称为$\left ( { L,M } \right )$-模糊囿空间，$\mathcal{B}$中的元素成为有界的。
+
+\textbf{注3.2} （1）一个$\left ( { L,M } \right )$-模糊囿结构满足$\mathcal{B} \left ( { \top _{ M } } \right )=\bot$\nobreak\hspace{0pt}，则称为$\left ( { L,M } \right )$-模糊真囿结构；
+
+（2）由定义3.1可知，对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，$\mathcal{B} \left ( { A\vee B } \right )=\mathcal{B} \left ( { A } \right )\wedge \mathcal{B} \left ( { B } \right )$也成立。
+
+\textbf{例3.3} 设$\left ( { X,d } \right )$是一个经典的度量空间，对$\forall x_{ 0 } \in X$\nobreak\hspace{0pt}，定义$\mathcal{B} :\left[ 0,1 \right] ^ { X } \to \left[ 0,1 \right]$\nobreak\hspace{0pt}，
+$$\mathcal{B} \left ( { A } \right )=\bigvee_{ r>0 } \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r } A'\left ( { x } \right )\text{，}$$
+则$\left ( { X,\mathcal{B} } \right )$称为$\left ( { L,M } \right )$-模糊囿空间。
+
+证明 （1）对$\forall y\in X$\nobreak\hspace{0pt}，取$r_{ 0 } =d\left ( { y,x_{ 0 } } \right )+1$\nobreak\hspace{0pt}，满足对$\forall x\in X$\nobreak\hspace{0pt}，$d\left ( { x,x_{ 0 } } \right )>r_{ 0 }$\nobreak\hspace{0pt}，则$x\ne y$\nobreak\hspace{0pt}，故$\mathcal{X}_{ \left \{ \begin{array}{l} y \end{array} \right \} } \left ( { x } \right )=0$\nobreak\hspace{0pt}，则$\mathcal{X}_{ \left \{ \begin{array}{l} y \end{array} \right \} } '\left ( { x } \right )=1$\nobreak\hspace{0pt}，即$\bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r } \mathcal{X}_{ \left \{ \begin{array}{l} y \end{array} \right \} } '\left ( { x } \right )=1$\nobreak\hspace{0pt}，$\mathcal{B} \left ( { \mathcal{X}_{ \left \{ \begin{array}{l} y \end{array} \right \} } } \right )=\bigvee_{ r>0 } \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r } \mathcal{X}_{ \left \{ \begin{array}{l} y \end{array} \right \} } '\left ( { x } \right )=1$\nobreak\hspace{0pt}；
+
+（2）对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，$A\le B$\nobreak\hspace{0pt}，则对$\forall x\in X$\nobreak\hspace{0pt}，$A\left ( { x } \right )\le B\left ( { x } \right )$\nobreak\hspace{0pt}，则$A'\left ( { x } \right )\ge B'\left ( { x } \right )$\nobreak\hspace{0pt}，所以对给定的$r>0$\nobreak\hspace{0pt}，$\bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r } A'\left ( { x } \right )\ge \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r } B'\left ( { x } \right )$\nobreak\hspace{0pt}，故
+$$\mathcal{B} \left ( { A } \right )=\bigvee_{ r>0 } \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r } A'\left ( { x } \right )\ge \bigvee_{ r>0 } \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r } B'\left ( { x } \right )=\mathcal{B} \left ( { B } \right )\text{；}$$
+（3）对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，由于
+$$\mathcal{B} \left ( { A } \right )\wedge \mathcal{B} \left ( { B } \right )=\left ( { \bigvee_{ r_{ 1 } >0 } \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r_{ 1 } } A'\left ( { x } \right ) } \right )\wedge \left ( { \bigvee_{ r_{ 2 } >0 } \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r_{ 2 } } B'\left ( { x } \right ) } \right )=\bigvee_{ r_{ 1 } >0 } \bigvee_{ r_{ 2 } >0 } \left ( { \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r_{ 1 } } A'\left ( { x } \right )\wedge \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r_{ 2 } } B'\left ( { x } \right ) } \right )$$
+取$r=max\left \{ \begin{array}{l} r_{ 1 } ,r_{ 2 } \end{array} \right \}$\nobreak\hspace{0pt}，则
+\begin{eqnarray*} \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r_{ 1 } } A'\left ( { x } \right )\wedge \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r_{ 2 } } B'\left ( { x } \right )\le \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r } A'\left ( { x } \right )\wedge \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r } B'\left ( { x } \right ) \\ \le \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r } \left ( { A'\left ( { x } \right )\wedge B'\left ( { x } \right ) } \right )=\bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r } \left ( { A\vee B } \right )'\left ( { x } \right ) \end{eqnarray*}
+故$\mathcal{B} \left ( { A } \right )\wedge \mathcal{B} \left ( { B } \right )=\bigvee_{ r_{ 1 } >0 } \bigvee_{ r_{ 2 } >0 } \left ( { \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r_{ 1 } } A'\left ( { x } \right )\wedge \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r_{ 2 } } B'\left ( { x } \right ) } \right )\le \bigvee_{ r>0 } \bigwedge_{ d\left ( { x,x_{ 0 } } \right )>r } \left ( { A\vee B } \right )'\left ( { x } \right )=\mathcal{B} \left ( { A\vee B } \right )$\nobreak\hspace{0pt}。
+
+\textbf{定义3.}\textbf{4} $\left ( { X,\mathcal{B} } \right )$是一个$\left ( { L,M } \right )$-模糊囿空间，定义映射$\delta :L ^ { X } \times L ^ { X } \to M$是$X$上的一个$\left ( { L,M } \right )$-模糊粗邻近，若它满足：
+
+对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，$\delta \left ( { A,B } \right )=\delta \left ( { B,A } \right )$\nobreak\hspace{0pt}；
+
+对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，$\delta \left ( { A,B } \right )\le \mathcal{B} '\left ( { A } \right )\wedge \mathcal{B} '\left ( { B } \right )$\nobreak\hspace{0pt}；
+
+对$\forall A,B,C\in L ^ { X }$\nobreak\hspace{0pt}，$\delta \left ( { A\vee B,C } \right )\le \delta \left ( { A,C } \right )\vee \delta \left ( { B,C } \right )$\nobreak\hspace{0pt}；
+
+对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，$\delta \left ( { A,B } \right )\ge \bigwedge_{ D\in L ^ { X } } \left ( { \delta \left ( { A,D } \right )\vee \delta \left ( { D',B } \right ) } \right )$\nobreak\hspace{0pt}；
+
+对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，$\delta '\left ( { A,B } \right )\le \mathcal{B} \left ( { A\wedge B } \right )$\nobreak\hspace{0pt}.
+
+则$\left ( { X,\mathcal{B} ,\delta } \right )$称为$\left ( { L,M } \right )$-模糊粗邻近空间。
+
+\textbf{注3.5}  若$L=\left \{ \begin{array}{l} 0,1 \end{array} \right \}$\nobreak\hspace{0pt}，$M$保留为一般的完全分配格，则退化为石老师定义的L-值粗邻近；若$L,M=\left \{ \begin{array}{l} 0,1 \end{array} \right \}$\nobreak\hspace{0pt}，则退化为经典意义下的粗邻近
+
+\textbf{注3.6}  设$\left ( { X,\mathcal{B} ,\delta } \right )$为一个$\left ( { L,M } \right )$-模糊粗邻近空间，若$\mathcal{B} \left ( { A } \right )=\top$\nobreak\hspace{0pt}，则对$\forall B\in L ^ { X }$\nobreak\hspace{0pt}，$\delta \left ( { A,B } \right )=\bot$\nobreak\hspace{0pt}；特别地，若$\mathcal{B} \left ( { \top _{ M } } \right )=\top$\nobreak\hspace{0pt}，则$\delta$恒为$\bot$\nobreak\hspace{0pt}。
+
+\textbf{例3.7}  设$\mathcal{B} :L ^ { X } \to M$为非空集合$X$上的一个$\left ( { L,M } \right )$-模糊真囿结构，定义$\delta _{ 1 } ,\delta _{ 2 } :L ^ { X } \times L ^ { X } \to M$分别为，对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，
+$$\delta _{ 1 } \left ( { A,B } \right )=\mathcal{B} '\left ( { A\wedge B } \right )\text{，}\delta _{ 2 } \left ( { A,B } \right )=\mathcal{B} '\left ( { A } \right )\wedge \mathcal{B} '\left ( { B } \right )\text{，}$$
+则称$\delta _{ 1 }$为$\left ( { L,M } \right )$-模糊离散粗邻近，$\delta _{ 2 }$为$\left ( { L,M } \right )$-模糊平凡粗邻近。
+
+\textbf{命题3.8} 设$\left ( { X,\mathcal{B} ,\delta } \right )$为一个$\left ( { L,M } \right )$-模糊粗邻近空间，对$\forall A,B,C,D\in L ^ { X }$\nobreak\hspace{0pt}，$A\le C$\nobreak\hspace{0pt}，$B\le D$\nobreak\hspace{0pt}，则$\delta \left ( { A,B } \right )\le \delta \left ( { C,D } \right )$\nobreak\hspace{0pt}。
+
+证明 由于$A\le C$\nobreak\hspace{0pt}，$B\le D$\nobreak\hspace{0pt}，则$A\vee C=C$\nobreak\hspace{0pt}，$B\vee D=D$\nobreak\hspace{0pt}，故
+$$\delta \left ( { C,D } \right )=\delta \left ( { A\vee C,D } \right )=\delta \left ( { A,D } \right )\vee \delta \left ( { C,D } \right )\text{，}$$
+所以$\delta \left ( { A,D } \right )\le \delta \left ( { C,D } \right )$\nobreak\hspace{0pt}，同理可得$\delta \left ( { A,B } \right )\le \delta \left ( { A,D } \right )$\nobreak\hspace{0pt}，故$\delta \left ( { A,B } \right )\le \delta \left ( { C,D } \right )$\nobreak\hspace{0pt}。
+
+\textbf{命题3.9} 设$\left ( { X,\mathcal{B} ,\delta } \right )$为一个$\left ( { L,M } \right )$-模糊粗邻近空间，对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，有
+$$\delta \left ( { A,B } \right )\le \bigwedge_{ D\in L ^ { X } } \left ( { \delta \left ( { A,D } \right )\vee \delta \left ( { D',B } \right ) } \right )\text{。}$$
+证明 对$\forall D\in L ^ { X }$\nobreak\hspace{0pt}，由于$B\le D\vee \left ( { B\wedge D' } \right )$\nobreak\hspace{0pt}，则
+$$\delta \left ( { A,B } \right )\le \delta \left ( { A,D\vee \left ( { B\wedge D' } \right ) } \right )=\delta \left ( { A,D } \right )\vee \delta \left ( { A,B\wedge D' } \right )\text{，}$$
+而$\delta '\left ( { B,D' } \right )\le \mathcal{B} \left ( { B\wedge D' } \right )$\nobreak\hspace{0pt}，则$\delta \left ( { B,D' } \right )\ge \mathcal{B} '\left ( { B\wedge D' } \right )$\nobreak\hspace{0pt}，所以
+$$\delta \left ( { A,B\wedge D' } \right )\le \mathcal{B} '\left ( { A } \right )\wedge \mathcal{B} '\left ( { B\wedge D' } \right )\le \mathcal{B} '\left ( { B\wedge D' } \right )\le \delta \left ( { B,D' } \right )\text{，}$$
+故$\delta \left ( { A,B } \right )\le \delta \left ( { A,D } \right )\vee \delta \left ( { D',B } \right )$\nobreak\hspace{0pt}，得证。
+
+\textbf{定义3.10 }设$\left ( { X,\mathcal{B} ,\delta } \right )$为一个$\left ( { L,M } \right )$-模糊粗邻近空间，定义映射$N_{ \delta } :L ^ { X } \times L ^ { X } \to M$\nobreak\hspace{0pt}，对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，$N_{ \delta } \left ( { A,B } \right )=\left ( { \delta \left ( { A,B' } \right ) } \right )'$\nobreak\hspace{0pt}，$N_{ \delta }$称为由$\delta$诱导的$\left ( { L,M } \right )$-模糊粗邻域。
+
+\textbf{定理3.11 }设$\left ( { X,\mathcal{B} ,\delta } \right )$为一个$\left ( { L,M } \right )$-模糊粗邻近空间，$N_{ \delta }$称为由$\delta$诱导的$\left ( { L,M } \right )$-模糊粗邻域，则：对$\forall A,B,C\in L ^ { X }$
+
+（1）$\mathcal{B} \left ( { A } \right )\le N_{ \delta } \left ( { A,B } \right )$\nobreak\hspace{0pt}；
+
+（2）$N_{ \delta } \left ( { A,B } \right )\le \mathcal{B} \left ( { A\wedge B' } \right )$\nobreak\hspace{0pt}；
+
+（3）若$A\le B$\nobreak\hspace{0pt}，则$N_{ \delta } \left ( { B,C } \right )\le N_{ \delta } \left ( { A,C } \right )$\nobreak\hspace{0pt}；
+
+（4）若$B\le C$\nobreak\hspace{0pt}，则$N_{ \delta } \left ( { A,B } \right )\le N_{ \delta } \left ( { A,C } \right )$\nobreak\hspace{0pt}；
+
+（5）$\mathcal{B} \left ( { A\wedge B' } \right )\wedge N_{ \delta } \left ( { B,C } \right )\le N_{ \delta } \left ( { A,C } \right )$\nobreak\hspace{0pt}；
+
+（6）$N_{ \delta } \left ( { A,B } \right )\wedge N_{ \delta } \left ( { B,C } \right )\le N_{ \delta } \left ( { A,C } \right )$\nobreak\hspace{0pt}；
+
+（7）$N_{ \delta } \left ( { A,B } \right )\wedge N_{ \delta } \left ( { A,B' } \right )\le \mathcal{B} \left ( { A } \right )$\nobreak\hspace{0pt}；
+
+（8）$N_{ \delta } \left ( { A,B } \right )=N_{ \delta } \left ( { B',A' } \right )$\nobreak\hspace{0pt}。
+
+证明 （1）对$\forall A,B'\in L ^ { X }$\nobreak\hspace{0pt}，由于$\delta \left ( { A,B' } \right )\le \mathcal{B} '\left ( { A } \right )\wedge \mathcal{B} '\left ( { B' } \right )$\nobreak\hspace{0pt}，所以$\delta \left ( { A,B' } \right )\le \mathcal{B} '\left ( { A } \right )$\nobreak\hspace{0pt}，故
+$$N_{ \delta } \left ( { A,B } \right )=\left ( { \delta \left ( { A,B' } \right ) } \right )'\ge \mathcal{B} \left ( { A } \right )\text{；}$$
+（2）对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，由于$\delta '\left ( { A,B } \right )\le \mathcal{B} \left ( { A\wedge B } \right )$\nobreak\hspace{0pt}，则$N_{ \delta } \left ( { A,B } \right )=\delta '\left ( { A,B' } \right )\le \mathcal{B} \left ( { A\wedge B' } \right )$\nobreak\hspace{0pt}；
+
+（3）对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，$A\le B$\nobreak\hspace{0pt}，则$\delta \left ( { A,C' } \right )\le \delta \left ( { B,C' } \right )$\nobreak\hspace{0pt}，故
+$$N_{ \delta } \left ( { A,C } \right )=\delta '\left ( { A,C' } \right )\ge \delta '\left ( { B,C' } \right )=N_{ \delta } \left ( { B,C } \right )\text{；}$$
+（4）与（3）同理；
+
+（5）对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，由于$A\le B\vee \left ( { A\wedge B' } \right )$\nobreak\hspace{0pt}，则
+$$\delta \left ( { A,C' } \right )\le \delta \left ( { B\vee \left ( { A\wedge B' } \right ),C' } \right )=\delta \left ( { B,C' } \right )\vee \delta \left ( { A\wedge B',C' } \right )$$
+又$\delta \left ( { A\wedge B',C' } \right )\le \mathcal{B} '\left ( { A\wedge B' } \right )\wedge \mathcal{B} '\left ( { C' } \right )\le \mathcal{B} '\left ( { A\wedge B' } \right )$\nobreak\hspace{0pt}，则$\delta \left ( { A,C' } \right )\le \delta \left ( { B,C' } \right )\vee \mathcal{B} '\left ( { A\wedge B' } \right )$\nobreak\hspace{0pt}，即
+$$N_{ \delta } \left ( { A,C } \right )=\delta '\left ( { A,C' } \right )\ge \delta '\left ( { B,C' } \right )\wedge \mathcal{B} \left ( { A\wedge B' } \right )=N_{ \delta } \left ( { B,C } \right )\wedge \mathcal{B} \left ( { A\wedge B' } \right )\text{；}$$
+（6）对$\forall A,B,C\in L ^ { X }$\nobreak\hspace{0pt}，由于$\delta \left ( { A,C' } \right )=\bigwedge_{ E\in L ^ { X } } \left ( { \delta \left ( { A,E } \right )\vee \delta \left ( { E',C' } \right ) } \right )$\nobreak\hspace{0pt}，取$E=B'$\nobreak\hspace{0pt}，则$\delta \left ( { A,C' } \right )\le \delta \left ( { A,B' } \right )\vee \delta \left ( { B,C' } \right )$\nobreak\hspace{0pt}，故
+$$N_{ \delta } \left ( { A,C } \right )=\delta '\left ( { A,C' } \right )\ge \delta '\left ( { A,B' } \right )\wedge \delta '\left ( { B,C' } \right )=N_{ \delta } \left ( { A,B } \right )\wedge N_{ \delta } \left ( { B,C } \right )\text{；}$$
+（7）由于$N_{ \delta } \left ( { A,B } \right )\wedge N_{ \delta } \left ( { B,A' } \right )\le N_{ \delta } \left ( { A,A' } \right )$\nobreak\hspace{0pt}，而$N_{ \delta } \left ( { B,A' } \right )=\delta '\left ( { B,A } \right )=\delta '\left ( { A,B } \right )$\nobreak\hspace{0pt}，同理$N_{ \delta } \left ( { A,B' } \right )=\delta '\left ( { A,B } \right )$\nobreak\hspace{0pt}，则$N_{ \delta } \left ( { A,B' } \right )=N_{ \delta } \left ( { B,A' } \right )$\nobreak\hspace{0pt}，故$N_{ \delta } \left ( { A,B } \right )\wedge N_{ \delta } \left ( { A,B' } \right )\le N_{ \delta } \left ( { A,A' } \right )$\nobreak\hspace{0pt}，又由于$N_{ \delta } \left ( { A,A' } \right )=\delta '\left ( { A,A } \right )\le \mathcal{B} \left ( { A\wedge A } \right )=\mathcal{B} \left ( { A } \right )$\nobreak\hspace{0pt}，则$N_{ \delta } \left ( { A,B } \right )\wedge N_{ \delta } \left ( { A,B' } \right )\le \mathcal{B} \left ( { A } \right )$\nobreak\hspace{0pt}；
+
+（8）对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，$N_{ \delta } \left ( { B',A' } \right )=\delta '\left ( { B',A } \right )=\delta '\left ( { A,B' } \right )=N_{ \delta } \left ( { A,B } \right )$\nobreak\hspace{0pt}。
+
+\textbf{注3.1}\textbf{2}\textbf{ }设$\left ( { X,\mathcal{B} ,\delta } \right )$为一个$\left ( { L,M } \right )$-模糊粗邻近空间，$N_{ \delta } :L ^ { X } \times L ^ { X } \to M$是由$\delta$诱导的$\left ( { L,M } \right )$-模糊粗邻域，则对$\forall A,B,D\in L ^ { X }$\nobreak\hspace{0pt}，$\mathcal{B} \left ( { D } \right )\wedge N_{ \delta } \left ( { A,B } \right )\le N_{ \delta } \left ( { A\vee D,B } \right )$\nobreak\hspace{0pt}。
+
+\textbf{定理3.1}\textbf{3}\textbf{ }映射$\mathcal{B} :L ^ { X } \to M$\nobreak\hspace{0pt}，是非空集合$X$上的一个$\left ( { L,M } \right )$-模糊真囿结构，映射$\delta :L ^ { X } \times L ^ { X } \to M$满足定义3.4里的（1）-（3），（5），设$N_{ \delta } :L ^ { X } \times L ^ { X } \to M$是由$N_{ \delta } \left ( { A,B } \right )=\left ( { \delta \left ( { A,B' } \right ) } \right )'$定义的$\left ( { L,M } \right )$-模糊粗邻域，则以下两条等价：
+
+（1）对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，$\delta \left ( { A,B } \right )\ge \bigwedge_{ D\in L ^ { X } } \left ( { \delta \left ( { A,D } \right )\vee \delta \left ( { D',B } \right ) } \right )$\nobreak\hspace{0pt}；（定义3.4的（4））
+
+（2）对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，$N_{ \delta } \left ( { A,B } \right )\le \bigvee_{ C\in L ^ { X } } \left ( { N_{ \delta } \left ( { A,C } \right )\wedge N_{ \delta } \left ( { C,B } \right ) } \right )$\nobreak\hspace{0pt}；
+
+证明 （1）推（2）：对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，由于$\delta \left ( { A,B' } \right )\ge \bigwedge_{ D\in L ^ { X } } \left ( { \delta \left ( { A,D } \right )\vee \delta \left ( { D',B' } \right ) } \right )$\nobreak\hspace{0pt}，则$\delta '\left ( { A,B' } \right )\le \bigvee_{ D\in L ^ { X } } \left ( { \delta '\left ( { A,D } \right )\vee \delta '\left ( { D',B' } \right ) } \right )$\nobreak\hspace{0pt}，所以
+$$N_{ \delta } \left ( { A,B } \right )\le \bigvee_{ D\in L ^ { X } } \left ( { N_{ \delta } \left ( { A,D' } \right )\wedge N_{ \delta } \left ( { D',B } \right ) } \right )\le \bigvee_{ C\in L ^ { X } } \left ( { N_{ \delta } \left ( { A,C } \right )\wedge N_{ \delta } \left ( { C,B } \right ) } \right )\text{；}$$
+（2）推（1）：对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}，由于$N_{ \delta } \left ( { A,B' } \right )\le \bigvee_{ C\in L ^ { X } } \left ( { N_{ \delta } \left ( { A,C } \right )\wedge N_{ \delta } \left ( { C,B' } \right ) } \right )$\nobreak\hspace{0pt}，则$\delta '\left ( { A,B } \right )\le \bigvee_{ C\in L ^ { X } } \left ( { \delta '\left ( { A,C' } \right )\vee \delta '\left ( { C,B } \right ) } \right )$\nobreak\hspace{0pt}，所以
+$$\delta \left ( { A,B } \right )\ge \bigwedge_{ C\in L ^ { X } } \left ( { \delta \left ( { A,C' } \right )\vee \delta \left ( { C,B } \right ) } \right )\ge \bigwedge_{ D\in L ^ { X } } \left ( { \delta \left ( { A,D } \right )\vee \delta \left ( { D',B } \right ) } \right )\text{。}$$
+\textbf{定义4.1}\textbf{ }设$X$为一个非空集合。映射$\varnothing :L ^ { X } \times L ^ { X } \to M$称为$L ^ { X }$上的一个$\left ( { L,M } \right )$-模糊等价关系，若它满足以下条件：对$\forall A,B,C\in L ^ { X }$\nobreak\hspace{0pt}，
+
+（1）自反性：$\varnothing \left ( { A,A } \right )=\top$\nobreak\hspace{0pt}；
+
+（2）对称性：$\varnothing \left ( { A,B } \right )=\varnothing \left ( { B,A } \right )$\nobreak\hspace{0pt}；
+
+（3）传递性：$\varnothing \left ( { A,B } \right )\wedge \varnothing \left ( { B,C } \right )\le \varnothing \left ( { A,C } \right )$\nobreak\hspace{0pt}。
+
+我们称$L ^ { X }$上的一个$\left ( { L,M } \right )$-模糊等价关系$\varnothing$为$X$上的一个伪$\left ( { L,M } \right )$-模糊渐近相似性，若它满足以下条件：
+
+（4）对$\forall A,B,C,D\in L ^ { X }$\nobreak\hspace{0pt}，
+$$\varnothing \left ( { A,B } \right )\wedge \varnothing \left ( { C,D } \right )\le \varnothing \left ( { A\vee C,B\vee D } \right )\text{。}$$
+进一步地，称伪$\left ( { L,M } \right )$-模糊渐近相似性$\varnothing$为$X$上的一个$\left ( { L,M } \right )$-模糊渐近相似性，若它满足以下分解条件：
+
+（5）对$\forall A_{ 1 } ,A_{ 2 } ,B_{ 1 } ,B_{ 2 } \in L ^ { X }$\nobreak\hspace{0pt}，
+$$\varnothing \left ( { A_{ 1 } \vee A_{ 2 } ,B } \right )\le \bigvee_{ B_{ 1 } \vee B_{ 2 } =B } \varnothing \left ( { A_{ 1 } ,B_{ 1 } } \right )\wedge \varnothing \left ( { A_{ 2 } ,B_{ 2 } } \right )\text{。}$$
+\textbf{例4.2 }设$X$为一个非空集合，定义映射$\varnothing _{ D } ,\varnothing _{ I } :L ^ { X } \times L ^ { X } \to M$为，对$\forall A,B\in L ^ { X }$\nobreak\hspace{0pt}：
+$$\varnothing _{ D } \left ( { A,B } \right )=\begin{cases} \begin{array}{c} \bot ,A\ne B \end{array} \end{cases}\text{；}\varnothing _{ I } \left ( { A,B } \right )=\top\text{，}$$
+则$\varnothing _{ D } ,\varnothing _{ I }$都是$L ^ { X }$上的一个$\left ( { L,M } \right )$-模糊渐近相似性，它们分别称为$L ^ { X }$上的离散/平凡$\left ( { L,M } \right )$-模糊渐近相似性。
+
+\textbf{定理4.3}\textbf{ }设$\left ( { X,\mathcal{B} ,\delta } \right )$为一个$\left ( { L,M } \right )$-模糊粗邻近空间，定义映射$\varnothing _{ \delta } :L ^ { X } \times L ^ { X } \to M$满足：$\varnothing _{ \delta } \left ( { A,B } \right )=\left ( { \bigwedge_{ A_{ 1 } \le A } \mathcal{B} \left ( { A_{ 1 } } \right )\vee \delta \left ( { A_{ 1 } ,B } \right ) } \right )\wedge \left ( { \bigwedge_{ B_{ 1 } \le B } \mathcal{B} \left ( { B_{ 1 } } \right )\vee \delta \left ( { A,B_{ 1 } } \right ) } \right )$\nobreak\hspace{0pt}，则$\varnothing _{ \delta }$称为$X$上的一个伪$\left ( { L,M } \right )$-模糊渐近相似性\textbf{。}
+
+证明 先证$\varnothing _{ \delta }$为$L ^ { X }$上的一个$\left ( { L,M } \right )$-模糊等价关系：对$\forall A,B,C,D\in L ^ { X }$\nobreak\hspace{0pt}，
+
+（1）由于$\delta \left ( { A,B } \right )=\delta \left ( { B,A } \right )$\nobreak\hspace{0pt}，所以显然$\varnothing _{ \delta } \left ( { A,B } \right )=\varnothing _{ \delta } \left ( { B,A } \right )$\nobreak\hspace{0pt}；
+
+（2）对$\forall A_{ 1 } \le A$\nobreak\hspace{0pt}，由于$\delta '\left ( { A_{ 1 } ,A } \right )\le \mathcal{B} \left ( { A_{ 1 } \wedge A } \right )=\mathcal{B} \left ( { A_{ 1 } } \right )$\nobreak\hspace{0pt}，则$\delta \left ( { A_{ 1 } ,A } \right )\ge \mathcal{B} '\left ( { A_{ 1 } } \right )$\nobreak\hspace{0pt}，故$\mathcal{B} \left ( { A_{ 1 } } \right )\vee \delta \left ( { A_{ 1 } ,A } \right )\ge \mathcal{B} \left ( { A_{ 1 } } \right )\vee \mathcal{B} '\left ( { A_{ 1 } } \right )=\top$\nobreak\hspace{0pt}，同理，$\mathcal{B} \left ( { A } \right )\vee \delta \left ( { A,A_{ 1 } } \right )=\top$\nobreak\hspace{0pt}，则$\varnothing _{ \delta } \left ( { A,A } \right )=\top$\nobreak\hspace{0pt}；
+
+（3）对$\forall A_{ 1 } \le A$\nobreak\hspace{0pt}，由于$B\le D\vee \left ( { B\wedge D' } \right )$\nobreak\hspace{0pt}，则
+$$\delta \left ( { A_{ 1 } ,B } \right )\le \delta \left ( { A_{ 1 } ,D\vee \left ( { B\wedge D' } \right ) } \right )=\delta \left ( { A_{ 1 } ,D } \right )\vee \delta \left ( { A_{ 1 } ,B\wedge D' } \right )\text{，}$$
+又因为
+$$\delta \left ( { A_{ 1 } ,B\wedge D' } \right )\le \mathcal{B} '\left ( { A_{ 1 } } \right )\wedge \mathcal{B} '\left ( { B\wedge D' } \right )\le \mathcal{B} '\left ( { B\wedge D' } \right )\text{，}$$
+所以$\delta \left ( { A_{ 1 } ,B } \right )\le \delta \left ( { A_{ 1 } ,D } \right )\vee \mathcal{B} '\left ( { B\wedge D' } \right )$\nobreak\hspace{0pt}，则
+\begin{eqnarray*} \varnothing _{ \delta } \left ( { A,B } \right )=\left ( { \bigwedge_{ A_{ 1 } \le A } \mathcal{B} \left ( { A_{ 1 } } \right )\vee \delta \left ( { A_{ 1 } ,B } \right ) } \right )\wedge \left ( { \bigwedge_{ B_{ 1 } \le B } \mathcal{B} \left ( { B_{ 1 } } \right )\vee \delta \left ( { A,B_{ 1 } } \right ) } \right ) \\ \le \mathcal{B} \left ( { A_{ 1 } } \right )\vee \delta \left ( { A_{ 1 } ,B } \right )\le \mathcal{B} \left ( { A_{ 1 } } \right )\vee \delta \left ( { A_{ 1 } ,D } \right )\vee \mathcal{B} '\left ( { B\wedge D' } \right ) \end{eqnarray*}\text{，}
+由于$B\wedge D'\le B$\nobreak\hspace{0pt}，则
+$$\varnothing _{ \delta } \left ( { B,C } \right )=\left ( { \bigwedge_{ B_{ 1 } \le B } \mathcal{B} \left ( { B_{ 1 } } \right )\vee \delta \left ( { B_{ 1 } ,C } \right ) } \right )\wedge \left ( { \bigwedge_{ C_{ 1 } \le C } \mathcal{B} \left ( { C_{ 1 } } \right )\vee \delta \left ( { B,C_{ 1 } } \right ) } \right )\le \mathcal{B} \left ( { B\wedge D' } \right )\vee \delta \left ( { B\wedge D',C } \right )\text{，}$$
+而$B\wedge D'\le D'$\nobreak\hspace{0pt}，则$\delta \left ( { B\wedge D',C } \right )\le \delta \left ( { D',C } \right )$\nobreak\hspace{0pt}，故$\varnothing _{ \delta } \left ( { B,C } \right )\le \mathcal{B} \left ( { B\wedge D' } \right )\vee \delta \left ( { D',C } \right )$\nobreak\hspace{0pt}，将上面得到的两个式子相交可得：
+$$\varnothing _{ \delta } \left ( { A,B } \right )\wedge \varnothing _{ \delta } \left ( { B,C } \right )\le \left ( { \mathcal{B} \left ( { A_{ 1 } } \right )\vee \delta \left ( { A_{ 1 } ,D } \right )\vee \mathcal{B} '\left ( { B\wedge D' } \right ) } \right )\wedge \left ( { \mathcal{B} \left ( { B\wedge D' } \right )\vee \delta \left ( { D',C } \right ) } \right )\text{，}$$
+故$\varnothing _{ \delta } \left ( { A,B } \right )\wedge \varnothing _{ \delta } \left ( { B,C } \right )\le \mathcal{B} \left ( { A_{ 1 } } \right )\vee \delta \left ( { A_{ 1 } ,D } \right )\vee \delta \left ( { D',C } \right )$\nobreak\hspace{0pt}，则
+$$\varnothing _{ \delta } \left ( { A,B } \right )\wedge \varnothing _{ \delta } \left ( { B,C } \right )\le \mathcal{B} \left ( { A_{ 1 } } \right )\vee \bigvee_{ D\in L ^ { X } } \left ( { \delta \left ( { A_{ 1 } ,D } \right )\vee \delta \left ( { D',C } \right ) } \right )=\mathcal{B} \left ( { A_{ 1 } } \right )\vee \delta \left ( { A_{ 1 } ,C } \right )\text{，}$$
+同理可得，都$\forall C_{ 1 } \le C$\nobreak\hspace{0pt}，$\varnothing _{ \delta } \left ( { A,B } \right )\wedge \varnothing _{ \delta } \left ( { B,C } \right )\le \mathcal{B} \left ( { C_{ 1 } } \right )\vee \delta \left ( { A,C_{ 1 } } \right )$\nobreak\hspace{0pt}，则
+$$\varnothing _{ \delta } \left ( { A,B } \right )\wedge \varnothing _{ \delta } \left ( { B,C } \right )\le \left ( { \bigwedge_{ A_{ 1 } \le A } \mathcal{B} \left ( { A_{ 1 } } \right )\vee \delta \left ( { A_{ 1 } ,C } \right ) } \right )\wedge \left ( { \bigwedge_{ C_{ 1 } \le C } \mathcal{B} \left ( { C_{ 1 } } \right )\vee \delta \left ( { A,C_{ 1 } } \right ) } \right )=\varnothing _{ \delta } \left ( { A,C } \right )\text{，}$$
+得证$\varnothing _{ \delta }$为$L ^ { X }$上的一个$\left ( { L,M } \right )$-模糊等价关系；
+
+\quad 下证对$\forall A,B,C,D\in L ^ { X }$\nobreak\hspace{0pt}，$\varnothing _{ \delta } \left ( { A,B } \right )\wedge \varnothing _{ \delta } \left ( { C,D } \right )\le \varnothing _{ \delta } \left ( { A\vee C,B\vee D } \right )$\nobreak\hspace{0pt}：
+
+令$A\vee C=U$\nobreak\hspace{0pt}，$B\vee D=V$\nobreak\hspace{0pt}，对$\forall U_{ 1 } \le U$\nobreak\hspace{0pt}，由于$U_{ 1 } =\left ( { U_{ 1 } \wedge A } \right )\vee \left ( { U_{ 1 } \wedge C } \right )$\nobreak\hspace{0pt}，记$U_{ A } =U_{ 1 } \wedge A\le A$\nobreak\hspace{0pt}，$U_{ C } =U_{ 1 } \wedge C\le C$\nobreak\hspace{0pt}，则
+$$\varnothing _{ \delta } \left ( { A,B } \right )=\left ( { \bigwedge_{ A_{ 1 } \le A } \mathcal{B} \left ( { A_{ 1 } } \right )\vee \delta \left ( { A_{ 1 } ,B } \right ) } \right )\wedge \left ( { \bigwedge_{ B_{ 1 } \le B } \mathcal{B} \left ( { B_{ 1 } } \right )\vee \delta \left ( { A,B_{ 1 } } \right ) } \right )\le \mathcal{B} \left ( { U_{ A } } \right )\vee \delta \left ( { U_{ A } ,B } \right )\text{，}$$
+$$\varnothing _{ \delta } \left ( { C,D } \right )=\left ( { \bigwedge_{ C_{ 1 } \le C } \mathcal{B} \left ( { C_{ 1 } } \right )\vee \delta \left ( { C_{ 1 } ,D } \right ) } \right )\wedge \left ( { \bigwedge_{ D_{ 1 } \le D } \mathcal{B} \left ( { D_{ 1 } } \right )\vee \delta \left ( { C,D_{ 1 } } \right ) } \right )\le \mathcal{B} \left ( { U_{ C } } \right )\vee \delta \left ( { U_{ C } ,D } \right )\text{，}$$
+又由于$B\le V$\nobreak\hspace{0pt}，$D\le V$\nobreak\hspace{0pt}，则$\delta \left ( { U_{ A } ,B } \right )\le \delta \left ( { U_{ A } ,V } \right )$\nobreak\hspace{0pt}，$\delta \left ( { U_{ C } ,D } \right )\le \delta \left ( { U_{ C } ,V } \right )$\nobreak\hspace{0pt}，两式相交可得
+\begin{eqnarray*} \varnothing _{ \delta } \left ( { A,B } \right )\wedge \varnothing _{ \delta } \left ( { C,D } \right )\le \left ( { \mathcal{B} \left ( { U_{ A } } \right )\vee \delta \left ( { U_{ A } ,V } \right ) } \right )\wedge \left ( { \mathcal{B} \left ( { U_{ C } } \right )\vee \delta \left ( { U_{ C } ,V } \right ) } \right ) \\ =\left ( { \mathcal{B} \left ( { U_{ A } } \right )\wedge \mathcal{B} \left ( { U_{ C } } \right ) } \right )\vee \left ( { \mathcal{B} \left ( { U_{ A } } \right )\wedge \delta \left ( { U_{ C } ,V } \right ) } \right )\vee \left ( { \delta \left ( { U_{ A } ,V } \right )\wedge \mathcal{B} \left ( { U_{ C } } \right ) } \right )\vee \left ( { \delta \left ( { U_{ A } ,V } \right )\wedge \delta \left ( { U_{ C } ,V } \right ) } \right ) \\ \le \left ( { \mathcal{B} \left ( { U_{ A } } \right )\wedge \mathcal{B} \left ( { U_{ C } } \right ) } \right )\vee \delta \left ( { U_{ C } ,V } \right )\vee \delta \left ( { U_{ A } ,V } \right ) \end{eqnarray*}
+又因为
+$$\mathcal{B} \left ( { U_{ A } } \right )\wedge \mathcal{B} \left ( { U_{ C } } \right )=\mathcal{B} \left ( { U_{ A } \vee U_{ C } } \right )=\mathcal{B} \left ( { U_{ 1 } } \right )\text{，}\delta \left ( { U_{ C } ,V } \right )\vee \delta \left ( { U_{ A } ,V } \right )=\delta \left ( { U_{ C } \vee U_{ A } ,V } \right )=\delta \left ( { U_{ 1 } ,V } \right )\text{，}$$
+则$\varnothing _{ \delta } \left ( { A,B } \right )\wedge \varnothing _{ \delta } \left ( { C,D } \right )\le \mathcal{B} \left ( { U_{ 1 } } \right )\vee \delta \left ( { U_{ 1 } ,V } \right )$\nobreak\hspace{0pt}，同理对$\forall V_{ 1 } \le V$\nobreak\hspace{0pt}，$\varnothing _{ \delta } \left ( { A,B } \right )\wedge \varnothing _{ \delta } \left ( { C,D } \right )\le \mathcal{B} \left ( { V_{ 1 } } \right )\vee \delta \left ( { U,V_{ 1 } } \right )$\nobreak\hspace{0pt}，故得证
+$$\varnothing _{ \delta } \left ( { A,B } \right )\wedge \varnothing _{ \delta } \left ( { C,D } \right )\le \varnothing _{ \delta } \left ( { U,V } \right )=\varnothing _{ \delta } \left ( { A\vee C,B\vee D } \right )\text{。}$$
+\textbf{定理4.4}\textbf{ }$L ^ { X }$上的一个$\left ( { L,M } \right )$-模糊等价关系$\varnothing$为$X$上的一个伪$\left ( { L,M } \right )$-模糊渐近相似性，定义$\mathcal{C}_{ \varnothing } :L ^ { X\times X } \to M$满足，对$\forall E\in L ^ { X\times X }$\nobreak\hspace{0pt}，$\mathcal{C}_{ \varnothing } \left ( { E } \right )=\bigwedge_{ F\le E } \varnothing \left ( { D_{ F } ,R_{ F } } \right )$\nobreak\hspace{0pt}，其中$D_{ F } \left ( { x } \right )=\bigvee_{ y\in X } F\left ( { x,y } \right )$\nobreak\hspace{0pt}，$R_{ F } \left ( { y } \right )=\bigvee_{ x\in X } F\left ( { x,y } \right )$\nobreak\hspace{0pt}，则称$\mathcal{C}_{ \varnothing }$为$L ^ { X }$上的一个$\left ( { L,M } \right )$-模糊粗结构。
+
+证明 （1）由于$\Delta x=\Delta x ^ { -1 }$\nobreak\hspace{0pt}，则$\mathcal{C}_{ \varnothing } \left ( { \Delta x } \right )=\bigwedge_{ F\le \Delta x ^ { -1 } } \varnothing \left ( { D_{ F } ,R_{ F } } \right )=\bigwedge_{ F\le \Delta x } \varnothing \left ( { D_{ F } ,R_{ F } } \right )$\nobreak\hspace{0pt}，对$\forall F\le \Delta x$\nobreak\hspace{0pt}，则$F\left ( { x,y } \right )\le \Delta x\left ( { x,y } \right )$\nobreak\hspace{0pt}，当$x\ne y$时，$\Delta x\left ( { x,y } \right )=\bot$\nobreak\hspace{0pt}，则$F\left ( { x,y } \right )=\bot$\nobreak\hspace{0pt}，$\mathcal{C}_{ \varnothing } \left ( { \Delta x } \right )=\varnothing \left ( { \bot ,\bot } \right )=\top$\nobreak\hspace{0pt}；当$x=y$时，$D_{ F } \left ( { x } \right )=\bigvee_{ y\in X } F\left ( { x,y } \right )=F\left ( { x,x } \right )$\nobreak\hspace{0pt}，$R_{ F } \left ( { y } \right )=\bigvee_{ x\in X } F\left ( { x,y } \right )=F\left ( { x,x } \right )$\nobreak\hspace{0pt}，则$\varnothing \left ( { D_{ F } ,R_{ F } } \right )=\top$\nobreak\hspace{0pt}，故$\mathcal{C}_{ \varnothing } \left ( { \Delta x } \right )=\top$\nobreak\hspace{0pt}；
+
+（2）对$\forall E,G\in L ^ { X\times X }$\nobreak\hspace{0pt}，$E\le G$\nobreak\hspace{0pt}，即$\forall F\le E$\nobreak\hspace{0pt}，一定有$F\le G$\nobreak\hspace{0pt}，显然$\mathcal{C}_{ \varnothing } \left ( { E } \right )\ge \mathcal{C}_{ \varnothing } \left ( { G } \right )$\nobreak\hspace{0pt}；
+
+（3）由于$\mathcal{C}_{ \varnothing } \left ( { E\vee G } \right )=\bigwedge_{ F\le E\vee G } \varnothing \left ( { D_{ F } ,R_{ F } } \right )$\nobreak\hspace{0pt}，对$\forall F\le E\vee G$\nobreak\hspace{0pt}，令$F_{ E } =F\wedge E$\nobreak\hspace{0pt}，$F_{ G } =F\wedge G$\nobreak\hspace{0pt}，则$F_{ E } \le E$\nobreak\hspace{0pt}，$F_{ G } \le G$\nobreak\hspace{0pt}，且$F=F\wedge \left ( { E\vee G } \right )=F_{ E } \vee F_{ G }$\nobreak\hspace{0pt}，则$D_{ F } =D_{ F_{ E } \vee F_{ G } } =D_{ F_{ E } } \vee D_{ F_{ G } }$\nobreak\hspace{0pt}，$R_{ F } =R_{ F_{ E } \vee F_{ G } } =R_{ F_{ E } } \vee R_{ F_{ G } }$\nobreak\hspace{0pt}，故
+$$\varnothing \left ( { D_{ F_{ E } } ,R_{ F_{ E } } } \right )\wedge \varnothing \left ( { D_{ F_{ G } } ,R_{ F_{ G } } } \right )\le \varnothing \left ( { D_{ F_{ E } } \vee D_{ F_{ G } } ,R_{ F_{ E } } \vee R_{ F_{ G } } } \right )=\varnothing \left ( { D_{ F } ,R_{ F } } \right )\text{，}$$
+由于$F_{ E } \le E$\nobreak\hspace{0pt}，$F_{ G } \le G$\nobreak\hspace{0pt}，则$\mathcal{C}_{ \varnothing } \left ( { E } \right )\le \varnothing \left ( { D_{ F_{ E } } ,R_{ F_{ E } } } \right )$\nobreak\hspace{0pt}，$\mathcal{C}_{ \varnothing } \left ( { G } \right )\le \varnothing \left ( { D_{ F_{ G } } ,R_{ F_{ G } } } \right )$\nobreak\hspace{0pt}，故
+$$\mathcal{C}_{ \varnothing } \left ( { E } \right )\wedge \mathcal{C}_{ \varnothing } \left ( { G } \right )\le \varnothing \left ( { D_{ F_{ E } } ,R_{ F_{ E } } } \right )\wedge \varnothing \left ( { D_{ F_{ G } } ,R_{ F_{ G } } } \right )\le \varnothing \left ( { D_{ F } ,R_{ F } } \right )\text{，}$$
+$$\mathcal{C}_{ \varnothing } \left ( { E } \right )\wedge \mathcal{C}_{ \varnothing } \left ( { G } \right )\le \bigwedge_{ F\le E\vee G } \varnothing \left ( { D_{ F } ,R_{ F } } \right )=\mathcal{C}_{ \varnothing } \left ( { E\vee G } \right )\text{；}$$
+（4）对$\forall F\le E\circ G$\nobreak\hspace{0pt}，即$F\left ( { x,y } \right )\le \bigvee_{ z\in X } \left ( { E\left ( { x,z } \right )\wedge G\left ( { z,y } \right ) } \right )$\nobreak\hspace{0pt}，令
+$$F_{ E } \left ( { x,z } \right )=\bigvee_{ y\in X } \left ( { F\left ( { x,y } \right )\wedge E\left ( { x,z } \right )\wedge G\left ( { z,y } \right ) } \right )\text{，}F_{ G } \left ( { z,y } \right )=\bigvee_{ x\in X } \left ( { F\left ( { x,y } \right )\wedge E\left ( { x,z } \right )\wedge G\left ( { z,y } \right ) } \right )\text{，}$$
+显然$F_{ E } \le E$\nobreak\hspace{0pt}，$F_{ G } \le G$\nobreak\hspace{0pt}，又因为
+$$D_{ F_{ E } } \left ( { x } \right )=\bigvee_{ z\in X } F_{ E } \left ( { x,z } \right )=\bigvee_{ z,y\in X } \left ( { F\left ( { x,y } \right )\wedge E\left ( { x,z } \right )\wedge G\left ( { z,y } \right ) } \right )=\bigvee_{ y\in X } F\left ( { x,y } \right )=D_{ F } \left ( { x } \right )\text{，}$$
+所以$D_{ F_{ E } } =D_{ F }$\nobreak\hspace{0pt}，同理可得$R_{ F_{ G } } =R_{ F }$\nobreak\hspace{0pt}，又因为
+$$R_{ F_{ E } } \left ( { z } \right )=\bigvee_{ x\in X } F_{ E } \left ( { x,z } \right )=\bigvee_{ x,y\in X } \left ( { F\left ( { x,y } \right )\wedge E\left ( { x,z } \right )\wedge G\left ( { z,y } \right ) } \right )\text{，}$$
+$$D_{ F_{ G } } \left ( { z } \right )=\bigvee_{ y\in X } F_{ G } \left ( { z,y } \right )=\bigvee_{ x,y\in X } \left ( { F\left ( { x,y } \right )\wedge E\left ( { x,z } \right )\wedge G\left ( { z,y } \right ) } \right )\text{，}$$
+则$R_{ F_{ E } } =D_{ F_{ G } }$\nobreak\hspace{0pt}，由于$F_{ E } \le E$及$F_{ G } \le G$\nobreak\hspace{0pt}，则
+$$\mathcal{C}_{ \varnothing } \left ( { E } \right )\le \varnothing \left ( { D_{ F_{ E } } ,R_{ F_{ E } } } \right )=\varnothing \left ( { D_{ F } ,R_{ F_{ E } } } \right )\text{，}\mathcal{C}_{ \varnothing } \left ( { G } \right )\le \varnothing \left ( { D_{ F_{ G } } ,R_{ F_{ G } } } \right )=\varnothing \left ( { D_{ F_{ G } } ,R_{ F } } \right )\text{，}$$
+故$\mathcal{C}_{ \varnothing } \left ( { E } \right )\wedge \mathcal{C}_{ \varnothing } \left ( { G } \right )\le \varnothing \left ( { D_{ F } ,R_{ F_{ E } } } \right )\wedge \varnothing \left ( { D_{ F_{ G } } ,R_{ F } } \right )\le \varnothing \left ( { D_{ F } ,R_{ F } } \right )$\nobreak\hspace{0pt}，则
+$$\mathcal{C}_{ \varnothing } \left ( { E } \right )\wedge \mathcal{C}_{ \varnothing } \left ( { G } \right )\le \bigwedge_{ F\le E\circ G } \varnothing \left ( { D_{ F } ,R_{ F } } \right )=\mathcal{C}_{ \varnothing } \left ( { E\circ G } \right )\text{；}$$
+（6）对$F\leq E^{-1}$\nobreak\hspace{0pt}，有$F\left ( { x,y } \right )\le E ^ { -1 } \left ( { x,y } \right )$\nobreak\hspace{0pt}，则$F ^ { -1 } \left ( { y,x } \right )\le E ^ { -1 } \left ( { x,y } \right )=E\left ( { y,x } \right )$\nobreak\hspace{0pt}，即$F ^ { -1 } \le E$\nobreak\hspace{0pt}，而$R_{ F ^ { -1 } } \left ( { y } \right )=\bigvee_{ x\in X } F ^ { -1 } \left ( { x,y } \right )=\bigvee_{ x\in X } F\left ( { y,x } \right )=D_{ F } \left ( { x } \right )$\nobreak\hspace{0pt}，则
+$$\varnothing \left ( { D_{ F } ,R_{ F } } \right )=\varnothing \left ( { R_{ F ^ { -1 } } ,D_{ F ^ { -1 } } } \right )=\varnothing \left ( { D_{ F ^ { -1 } } ,R_{ F ^ { -1 } } } \right )\text{，}$$
+故$\mathcal{C}_{ \varnothing } \left ( { E ^ { -1 } } \right )=\bigwedge_{ F\le E ^ { -1 } } \varnothing \left ( { D_{ F } ,R_{ F } } \right )=\bigwedge_{ F ^ { -1 } \le E } \varnothing \left ( { D_{ F ^ { -1 } } ,R_{ F ^ { -1 } } } \right )=\mathcal{C}_{ \varnothing } \left ( { E } \right )$\nobreak\hspace{0pt}。
+
+\end{document}
