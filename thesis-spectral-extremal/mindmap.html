@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>论文思维导图 | 图的前三大邻接特征值和</title>
+  <style>
+    :root { color-scheme: light; --ink: #172033; --muted: #5c6678; --line: #d9e0ea; --paper: #fff; --accent: #1769aa; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: #f5f7fa; font-family: "Microsoft YaHei", "Segoe UI", sans-serif; line-height: 1.6; }
+    main { max-width: 1180px; margin: 0 auto; padding: 28px 20px 48px; }
+    header { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 18px; }
+    h1 { margin: 0; font-size: clamp(22px, 4vw, 34px); line-height: 1.25; }
+    p { color: var(--muted); margin: 8px 0 0; }
+    nav { display: flex; gap: 12px; flex-wrap: wrap; }
+    nav a { color: var(--accent); font-weight: 600; }
+    .diagram { margin-top: 24px; overflow: auto; background: var(--paper); border: 1px solid var(--line); padding: 24px 12px; min-height: 640px; }
+    .mermaid { min-width: 920px; text-align: center; }
+    footer { margin-top: 18px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 680px) { main { padding: 20px 12px 36px; } .diagram { padding: 14px 4px; min-height: 520px; } }
+  </style>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.0/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, theme: "base", themeVariables: { primaryColor: "#e8f1fb", primaryTextColor: "#172033", primaryBorderColor: "#1769aa", lineColor: "#73849a", secondaryColor: "#f3f6fa", tertiaryColor: "#ffffff" } });
+  </script>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>图的前三大邻接特征值和</h1>
+        <p>变分结构、谱极值、扰动稳定性与计算猜想</p>
+      </div>
+      <nav aria-label="资源下载">
+        <a href="./thesis.pdf">下载论文 PDF</a>
+        <a href="./论文思维导图.md">查看导图源码</a>
+      </nav>
+    </header>
+    <section class="diagram" aria-label="论文结构思维导图">
+      <div class="mermaid">
+mindmap
+  root((图的前三大邻接特征值和))
+    研究问题
+      目标函数：前三大邻接特征值之和
+      归一化极限与谱极值
+      全局六分块最优性仍为猜想
+    第一章 绪论
+      研究背景与现状
+      难点与技术路线
+      主要结果
+    第二章 预备知识
+      邻接谱
+      Rayleigh商与Ky Fan原理
+      Graphon算子
+      C_5谱与等价划分
+    第三章 有限图与graphon
+      阶梯graphon
+      非零谱除以顶点数
+      无限重零特征值
+      0-1有限步逼近
+    第四章 极值graphon
+      极值存在性
+      第三个正谱方向
+      灵敏度核符号条件
+      零水平集二级选择
+      椭球驻点猜想
+    第五章 clique-C_5 blow-up
+      商矩阵与完整谱
+      Fourier分解
+      对角密度单调性
+      最优比例 alpha_*
+      二次稳定性
+      有限阶显式误差
+    第六章 一般上界
+      一般图线性上界
+      二部图奇异值上界
+      liminf与limsup
+    第七章 扰动稳定性
+      矩阵Ky Fan界
+      编辑距离
+      Graphon L^2
+      双边有限阶展开
+      值稳定不等于结构稳定
+    第八章 计算与后续问题
+      小阶复核
+      非平衡搜索
+      Hessian检验
+      随机搜索
+      三个结构猜想
+    证据等级
+      已证明结论
+      条件结论
+      计算证据
+      未决猜想
+    核心常数
+      最优核心比例约为 0.197272
+      候选渐近常数约为 1.281568
+      有限阶目标含精确修正项 -3
+      C_5 blow-up给出全体图的显式下界
+      全局最优性仍待证明
+      </div>
+    </section>
+    <footer>固定下载地址：本目录中的文件名保持不变即可持续更新内容。</footer>
+  </main>
+</body>
+</html>
