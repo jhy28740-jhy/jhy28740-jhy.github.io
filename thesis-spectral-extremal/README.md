@@ -14,3 +14,19 @@
 论文后续修改时，保持 `thesis.pdf`、`论文思维导图.md` 和 `mindmap.html` 的文件名不变，网页地址就不会变化。每次更新应同步提交 PDF、源文件压缩包和版本日期，并在 Git 提交信息中注明修改内容。
 
 当前版本：2026-09-01
+
+## 后续更新
+
+1. 在论文工程中重新编译 `main.tex`，确认 `build/main.pdf` 为最新版本。
+2. 将最新 PDF 覆盖为本目录的 `thesis.pdf`。
+3. 重新打包 LaTeX 源码为 `thesis-source.zip`，并按需要更新本文件和思维导图。
+4. 在 `jhy28740-jhy.github.io` 仓库中执行：
+
+   ```powershell
+   git add thesis-spectral-extremal
+   git commit -m "Update spectral extremal thesis"
+   git push origin main
+   ```
+
+固定地址不会改变：
+`https://jhy28740-jhy.github.io/thesis-spectral-extremal/`
