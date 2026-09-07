@@ -10,14 +10,14 @@
     body { margin: 0; color: var(--ink); background: #f5f7fa; font-family: "Microsoft YaHei", "Segoe UI", sans-serif; line-height: 1.6; }
     main { max-width: 1180px; margin: 0 auto; padding: 28px 20px 48px; }
     header { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 18px; }
-    h1 { margin: 0; font-size: clamp(22px, 4vw, 34px); line-height: 1.25; }
+    h1 { margin: 0; font-size: 34px; line-height: 1.25; overflow-wrap: anywhere; }
     p { color: var(--muted); margin: 8px 0 0; }
     nav { display: flex; gap: 12px; flex-wrap: wrap; }
     nav a { color: var(--accent); font-weight: 600; }
     .diagram { margin-top: 24px; overflow: auto; background: var(--paper); border: 1px solid var(--line); padding: 24px 12px; min-height: 640px; }
     .mermaid { min-width: 920px; text-align: center; }
     footer { margin-top: 18px; color: var(--muted); font-size: 13px; }
-    @media (max-width: 680px) { main { padding: 20px 12px 36px; } .diagram { padding: 14px 4px; min-height: 520px; } }
+    @media (max-width: 680px) { main { padding: 20px 12px 36px; } h1 { font-size: 26px; } .diagram { padding: 14px 4px; min-height: 520px; } }
   </style>
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.0/dist/mermaid.esm.min.mjs";
@@ -77,7 +77,9 @@ mindmap
       cross_rate["平方耦合距离 O(sqrt(D))"]
       candidate_rays["候选六条接触正射线：类内自能量上界、唯一等号与定量稳定性"]
       polarization_gap["自能量缺口精确极化恒等式"]
-      bridge_inequality["精确缺口：二次极化项受交叉亏损控制"]
+      rotation_obstruction["固定方向交叉亏损存在正交旋转障碍"]
+      orbit_alignment["正交轨道化交叉亏损：精确极化与交叉刚性"]
+      bridge_inequality["精确缺口：轨道化二次项受最优交叉亏损控制"]
       conditional_negativity_counterexample["六点轴向分布排除全局条件负性捷径"]
       coarse_bound["匹配上界仍未证明"]
       third_positive["第三个正谱方向"]
@@ -106,8 +108,8 @@ mindmap
       general_template_kkt["一般六模板内点 KKT：活动 Ky Fan 次梯覆盖重根"]
       unresolved_boundary["十三类边界严格退化到至多五块，值不超过 c4"]
       uniform_collar["统一边界领：任一 d_i≤1/1300 时严格低于 c-star"]
-      wide_collars["十二未决模板：72 个坐标领中 68 个加强到 d_k≤1/100"]
-      exceptional_faces["四个例外面同诱导 07e，仅保留 1/1300 领"]
+      wide_collars["十二未决模板：72/72 个坐标领加强到 d_k≤1/100"]
+      exceptional_faces["四个原例外面：1/60 辅助领或 07e 第四正特征值扣除"]
       semialgebraic_strata["十三类支持面半代数分层：谱隙与重根分支"]
       interval_completeness["严格区间完备性接口已列出，但全覆盖尚未完成"]
       complement_data["十三类补图边集与自同构轨道精确分类"]
@@ -152,7 +154,7 @@ mindmap
       three_global_levels["开放问题 8.3：三个全局未解层次"]
       sign_partition_route["首要结构目标：极值或近极值分布存在候选六类符号分拆"]
       conditional_stability["全局唯一性条件推出定性 cut 稳定性"]
-      polarization_route["后续首要目标：证明极化桥接不等式"]
+      polarization_route["后续首要目标：证明轨道化极化桥接不等式"]
       sign_graph_route["固定阶路线：按符号图分类有限 KKT 系统"]
       rate_open["显式稳定速率仍未解决"]
     evidence["证据等级"]
@@ -173,7 +175,7 @@ mindmap
       global_unknown["全局最优性仍待证明"]
       exact_gap["未决：自能量上界与等号唯一性"]
       structural_gap["未决：把任意极值或近极值分布约化到候选六类符号模板"]
-      bridge_gap["精确缺口：Q(nu-mu-star) ≤ 2 交叉亏损"]
+      bridge_gap["精确缺口：最优旋转后 Q ≤ 2 轨道交叉亏损"]
       stability_logic["定性 cut 稳定性依赖全局唯一极大元"]
       </div>
     </section>

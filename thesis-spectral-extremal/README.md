@@ -10,14 +10,15 @@
 | [thesis-source.zip](./thesis-source.zip) | LaTeX 正文、参考文献、图表与计算脚本 |
 | [kkt_audit_results.txt](./kkt_audit_results.txt) | 统一证书残余十三类的固定种子 KKT 审计摘要（其中 `3dfe` 已另有专用证书） |
 | [remaining_stationary_search.txt](./remaining_stationary_search.txt) | 十二个未决模板的光滑内点 KKT 轨道侦察（非完备性证明） |
-| [six_block_boundary_dual_collar_certificates.json](./six_block_boundary_dual_collar_certificates.json) | 68 个模板--坐标宽边界领的可独立核验有理证书 |
+| [six_block_boundary_dual_collar_certificates.json](./six_block_boundary_dual_collar_certificates.json) | 68 个模板--坐标宽边界领的直接 shifted-dual 有理证书 |
+| [six_block_exception_boundary_collar_certificates.json](./six_block_exception_boundary_collar_certificates.json) | 四个原例外面：20 份 1/60 辅助领与 4 份总正谱证书 |
 | [文本原创性与AI风格自检报告.md](./文本原创性与AI风格自检报告.md) | 本地表层重合与模板化表达自检，不等同于正式检测率 |
 
 ## 更新约定
 
 论文后续修改时，保持 `thesis.pdf`、`论文思维导图.md` 和 `mindmap.html` 的文件名不变，网页地址就不会变化。每次更新应同步提交 PDF、源文件压缩包和版本日期，并在 Git 提交信息中注明修改内容。
 
-当前版本：2026-09-07，共 131 页（新增至多 $48$ 原子的全局达到性与单个紧
+当前版本：2026-09-07，共 134 页（新增至多 $48$ 原子的全局达到性与单个紧
 Stiefel--Perron 问题约化、光滑不可约有限驻点的矩阵 KKT 方程、至多四原子的精确
 上界与等号刻画、全部五原子的粗统一上界 $(4+\sqrt6)/5$、正惯性筛选和
 精确最大值 $c_4=(9+4\sqrt6)/15$ 的完整有理分类、任意全局极值分布的自支撑椭球和二阶必要条件，以及候组六原子
@@ -34,10 +35,12 @@ $O(\!\sqrt D)$ 的定量近等号刚性；第五章 Hessian 闭式另有精确�
 再以秩一交错、Perron 根质量转移和精确三角 Bernstein 正性证书证明
 `3dfe` 在全部六维权重上严格小于 $32/25<c_*$。固定种子 KKT 审计结果仅作为
 其余模板后续区间覆盖的数值线索；对实际未解十二模板的 $72$ 个模板--坐标边界
-领，统一箭头扰动论证先严格给出 $d_k\leq1/1300$ 的排除，再由 $68$ 份逐面有理
-shifted-dual 证书把其中 $68$ 个领加强为 $d_k\leq1/100$。其余四个面
-`(03be,4), (07de,3), (07fe,3), (0fdf,1)` 删除对应坐标后均诱导五阶模板
-`07e`，目前仍只使用 $1/1300$ 领；这不是对十二个模板内点的全局排除；
+领，统一箭头扰动论证先严格给出 $d_k\leq1/1300$ 的排除，再由 68 份逐面有理
+shifted-dual 证书和四个例外面的二分证书完整加强为全部
+$d_k\leq1/100$。四个例外面 `(03be,4), (07de,3), (07fe,3), (0fdf,1)` 删除对应
+坐标后均诱导五阶模板 `07e=I+A(K_{2,3})`；当另一坐标不超过 $1/60$ 时使用
+20 份辅助证书，否则用第四正特征值扣除总正谱证书。这不是对十二个模板内点的
+全局排除；
 第五章进一步证明：只要任意支撑数的各向同性分布能够按候选 clique-$C_5$ 正负
 内积关系分成六类，就能得到匹配上界、正交意义下的唯一等号和定量 cut 稳定性；
 全局自能量匹配上界与自能量等号唯一性仍为猜想。五原子的粗统一矩估计仍高于
@@ -52,7 +55,7 @@ cut 距离结构稳定性。现有定理只在候选六类符号模板内解决�
 
 ## 证书哈希与剩余掩码
 
-为使下载包与正文版本可核对，四份逐模板 JSON 证书的 SHA256 为：
+为使下载包与正文版本可核对，五份逐模板 JSON 证书的 SHA256 为：
 
 | 文件 | SHA256 |
 | --- | --- |
@@ -60,18 +63,19 @@ cut 距离结构稳定性。现有定理只在候选六类符号模板内解决�
 | `six_block_low_inertia_dual_certificates.json` | `5EA61DEF3E9DBFE2FDB5773396C38113ECF6238994393B1AE5AE81F4A6575539` |
 | `six_block_shifted_dual_certificates.json` | `2ED71CC3CF6147EA50AE1C26BF90086C62751F0BF9BAEC759BBC46F7044CA5E5` |
 | `six_block_boundary_dual_collar_certificates.json` | `2D9577E2908974208FED54C2F35CEBC76B4BD940D5DAFB76B53FEEFC26BC873C` |
+| `six_block_exception_boundary_collar_certificates.json` | `F8C75D4106E3A32CC6B460EBE2B17D054CEF937B369C2F1D40D7714178659400` |
 
 六原子 156 类中，统一证书闭合 143 类，`3dfe` 的专用证书再闭合 1 类，合计
 已有 144 类严格闭合。当前仍未排除的 12 个完整惯性 $(4,2,0)$ 掩码为
 `03bc, 03bd, 03be, 06df, 077c, 077d, 07de, 07fe, 0fdf, 1bbc, 1bbd, 1bfe`。
 
-本次发布的 `thesis.pdf`（131 页）SHA256 为
-`194A30051395370476F5582C5BD18FD35F9ED7264B1619A9E98DC834FDFABDC9`。
+本次发布的 `thesis.pdf`（134 页）SHA256 为
+`F60D02FD78D7D889C05AA0C9CFFC4ABEF79521985A23BDA22C144C08C23B327C`。
 
 本次发布的 `thesis-source.zip` SHA256 为
-`613A5CD4135B4EAD3624317DCE95D609D3F8FCB28E87BE295BCD643025175AF2`。
+`2A98AC8232433585FD28B55310A50CB95880E9561A8BDF83616447092C232373`。
 
-文本原创性与 AI 风格自检报告已基于 131 页 PDF 重新生成；其结果仍只是本地表层
+文本原创性与 AI 风格自检报告已基于 134 页 PDF 重新生成；其结果仍只是本地表层
 筛查，不等同于学校正式查重率或 AI 检测率。
 
 本版新增十三个统一证书残余模板的补图边集与自同构轨道精确数据，并对 `3dfe`
@@ -82,7 +86,7 @@ cut 距离结构稳定性。现有定理只在候选六类符号模板内解决�
 该证书同样不涉及一般 1bbc 权重或全局匹配上界。对 3dfe 还新增双平衡对--单
 分裂对的全局 $c_4$ 上界，以及平方根不平衡量不超过 $1/2500$ 时的严格局部领
 排除；这些受限结论是一般六维证书之前的中间结果，不应与最终全局排除相混淆。
-本轮又增加统一 $1/1300$ 边界领、$68/72$ 个逐面 $1/100$ 宽领证书和十二模板
+本轮又增加统一 $1/1300$ 边界领、全部 $72/72$ 个逐面 $1/100$ 宽领证书和十二模板
 光滑 KKT 驻点轨道侦察。所有数值驻点均出现正 Hessian 方向，但轨道枚举尚无
 严格完备性，也未覆盖第三、第四特征值碰撞分支，因此正文仍把十二模板内点问题
 和三个全局层次保留为开放问题。

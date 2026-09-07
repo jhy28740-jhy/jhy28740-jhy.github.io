@@ -9,7 +9,7 @@
     * { box-sizing: border-box; }
     body { margin: 0; background: #f5f7fa; color: var(--ink); font-family: "Microsoft YaHei", "Segoe UI", sans-serif; line-height: 1.65; }
     main { width: min(900px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 64px; }
-    h1 { margin: 0; max-width: 760px; font-size: clamp(26px, 5vw, 44px); line-height: 1.25; }
+    h1 { margin: 0; max-width: 760px; font-size: 44px; line-height: 1.25; overflow-wrap: anywhere; }
     .subtitle { color: var(--muted); margin: 12px 0 30px; }
     .meta { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 16px 0; color: var(--muted); }
     .actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 26px 0 36px; }
@@ -20,13 +20,18 @@
     li { margin: 7px 0; }
     li a { color: var(--accent); }
     footer { color: var(--muted); font-size: 13px; margin-top: 42px; }
+    @media (max-width: 680px) {
+      main { width: min(100% - 24px, 900px); padding: 28px 0 44px; }
+      h1 { font-size: 30px; }
+      .meta { overflow-wrap: anywhere; }
+    }
   </style>
 </head>
 <body>
   <main>
     <h1>图的前三大邻接特征值和的变分结构及谱极值</h1>
-    <p class="subtitle">毕业论文增强版 · 2026-09-07 · 131 页</p>
-    <div class="meta">研究主题：图谱、Ky Fan 原理、graphon、三维各向同性矩、48 原子 Stiefel--Perron 约化、有限驻点 KKT、自支撑椭球、五原子精确分类、六类符号模板刚性、极化缺口、clique-C<sub>5</sub> blow-up、六分块全局凹性、统一 1/1300 边界领、68 个逐面有理证书与十二个实际未解模板。</div>
+    <p class="subtitle">毕业论文增强版 · 2026-09-07 · 134 页</p>
+    <div class="meta">研究主题：图谱、Ky Fan 原理、graphon、三维各向同性矩、48 原子 Stiefel--Perron 约化、有限驻点 KKT、自支撑椭球、五原子精确分类、六类符号模板刚性、极化缺口、clique-C<sub>5</sub> blow-up、六分块全局凹性、统一 1/1300 边界领、全部 72 个逐面 1/100 证书与十二个实际未解模板。</div>
     <div class="actions">
       <a class="primary" href="./thesis.pdf" download>下载论文 PDF</a>
       <a href="./mindmap.html">打开思维导图</a>
@@ -36,18 +41,19 @@
     </div>
     <h2>发布内容</h2>
     <ul>
-      <li><a href="./thesis.pdf">论文 PDF</a>：共 131 页，包含至多 48 原子的全局达到性约化、有限驻点 KKT、至多四原子精确上界、全部五原子的精确分类、全局极值的自支撑椭球、候选六原子的椭球与 Grassmann 区间证书、六分块全局平衡化，以及六类符号模板下的匹配上界、唯一等号和定量 cut 稳定性。六原子 156 类中，统一证书闭合 143 类，3dfe 的专用秩一交错--Perron--Bernstein 证书再闭合 1 类，合计 144 类；当前只剩 12 个完整惯性 (4,2,0) 模板未排除。对这些模板的 72 个坐标边界领，68 个已有 d<sub>k</sub>≤1/100 的逐面有理证书，另四个共享 07e 诱导模板的面仍有统一 d<sub>k</sub>≤1/1300 严格领；这不处理其内部。</li>
+      <li><a href="./thesis.pdf">论文 PDF</a>：共 134 页，包含至多 48 原子的全局达到性约化、有限驻点 KKT、至多四原子精确上界、全部五原子的精确分类、全局极值的自支撑椭球、候选六原子的椭球与 Grassmann 区间证书、六分块全局平衡化，以及六类符号模板下的匹配上界、唯一等号和定量 cut 稳定性。六原子 156 类中，统一证书闭合 143 类，3dfe 的专用秩一交错--Perron--Bernstein 证书再闭合 1 类，合计 144 类；当前只剩 12 个完整惯性 (4,2,0) 模板未排除。对这些模板的 72 个坐标边界领，现已全部严格排除 d<sub>k</sub>≤1/100；四个原例外面通过辅助 1/60 领、诱导 07e 的第四正特征值和总正谱证书完成二分，这不处理其内部。</li>
       <li><strong>开放问题 8.3</strong>：全体三维各向同性分布的匹配上界；全部等号分布在正交变换下的唯一性；不附加六类符号分拆假设的近等号 cut 距离稳定性。</li>
       <li><strong>当前结构缺口</strong>：尚未证明任意极值或充分近极值分布都能按候选 clique-C<sub>5</sub> 内积符号关系分成六类。正文没有把这一步写成定理。</li>
       <li><strong>五原子进展</strong>：统一矩估计先给出粗界 (4+√6)/5 ≈ 1.289898；随后对 1024 个标号模板按同构类构造完整有理对偶证书，得到精确最大值 c<sub>4</sub>=(9+4√6)/15 ≈ 1.253197&lt;c<sub>*</sub>，由 K<sub>1</sub> join C<sub>4</sub> 达到。数值搜索只用于发现候选，严格结论来自证书与解析证明。</li>
-      <li><strong>证书复核</strong>：四份逐模板 JSON 证书及其 SHA256 已写入源码 README；统一证书的 13 个残余中，3dfe 已由专用证书排除，实际未解的 12 个固定掩码为 03bc、03bd、03be、06df、077c、077d、07de、07fe、0fdf、1bbc、1bbd、1bfe。</li>
+      <li><strong>证书复核</strong>：五份逐模板 JSON 证书及其 SHA256 已写入源码 README；统一证书的 13 个残余中，3dfe 已由专用证书排除，实际未解的 12 个固定掩码为 03bc、03bd、03be、06df、077c、077d、07de、07fe、0fdf、1bbc、1bbd、1bfe。</li>
       <li><a href="./mindmap.html">思维导图网页</a>：按研究问题、章节、证据等级和核心常数组织。</li>
       <li><a href="./论文思维导图.md">思维导图源码</a>：可在 GitHub 中直接查看并继续编辑。</li>
       <li><a href="./thesis-source.zip">LaTeX 源码包</a>：含正文、图表、计算脚本和原创性自检报告。</li>
       <li><strong>统一残余 KKT 审计</strong>：对统一证书剩下的 13 类作固定种子数值运行；3dfe 已另有严格全局证书，其余 12 类的数值结果仅用于后续区间覆盖，不能代替驻点完备性证明。</li>
       <li><a href="./kkt_audit_results.txt">KKT 审计摘要</a>：提供掩码、观测值、最小测度和第三谱隙，便于复核数值线索。</li>
       <li><a href="./remaining_stationary_search.txt">光滑 KKT 轨道侦察</a>：列出十二模板的数值驻点轨道与 Hessian 惯性；轨道完备性和重根分支仍未证明。</li>
-      <li><a href="./six_block_boundary_dual_collar_certificates.json">宽边界领证书</a>：68 份有理证书，可由源码包中的独立验证脚本复核。</li>
+      <li><a href="./six_block_boundary_dual_collar_certificates.json">宽边界领证书</a>：68 份直接 shifted-dual 有理证书。</li>
+      <li><a href="./six_block_exception_boundary_collar_certificates.json">例外面二分证书</a>：20 份 1/60 辅助领证书与 4 份总正谱证书，可由源码包中的独立验证脚本复核。</li>
       <li><a href="./文本原创性与AI风格自检报告.md">文本原创性与 AI 风格自检</a>：仅提供本地表层筛查，不等同于学校正式查重率或 AI 率。</li>
     </ul>
     <footer>固定地址：/thesis-spectral-extremal/。后续版本沿用相同路径和文件名，更新后链接不变。</footer>
