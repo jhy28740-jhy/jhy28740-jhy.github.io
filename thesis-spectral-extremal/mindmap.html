@@ -5,189 +5,214 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>论文思维导图 | 图的前三大邻接特征值和</title>
   <style>
-    :root { color-scheme: light; --ink: #172033; --muted: #5c6678; --line: #d9e0ea; --paper: #fff; --accent: #1769aa; }
+    :root {
+      --ink: #202426;
+      --muted: #62696d;
+      --paper: #ffffff;
+      --wash: #f4f6f5;
+      --line: #cfd5d2;
+      --green: #18705a;
+      --green-soft: #e7f4ee;
+      --amber: #8a5d0f;
+      --amber-soft: #fff3d9;
+      --red: #9a3f33;
+      --red-soft: #fde9e6;
+      --blue: #3f6687;
+      --blue-soft: #eaf0f7;
+    }
     * { box-sizing: border-box; }
-    body { margin: 0; color: var(--ink); background: #f5f7fa; font-family: "Microsoft YaHei", "Segoe UI", sans-serif; line-height: 1.6; }
-    main { max-width: 1180px; margin: 0 auto; padding: 28px 20px 48px; }
-    header { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 18px; }
-    h1 { margin: 0; font-size: 34px; line-height: 1.25; overflow-wrap: anywhere; }
-    p { color: var(--muted); margin: 8px 0 0; }
-    nav { display: flex; gap: 12px; flex-wrap: wrap; }
-    nav a { color: var(--accent); font-weight: 600; }
-    .diagram { margin-top: 24px; overflow: auto; background: var(--paper); border: 1px solid var(--line); padding: 24px 12px; min-height: 640px; }
-    .mermaid { min-width: 920px; text-align: center; }
-    footer { margin-top: 18px; color: var(--muted); font-size: 13px; }
-    @media (max-width: 680px) { main { padding: 20px 12px 36px; } h1 { font-size: 26px; } .diagram { padding: 14px 4px; min-height: 520px; } }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--wash);
+      font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    main { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 36px 0 56px; }
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: end;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    h1 { margin: 0; font-size: 32px; line-height: 1.3; letter-spacing: 0; }
+    .subtitle { margin: 8px 0 0; color: var(--muted); }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
+    nav a { color: var(--green); font-weight: 600; text-decoration: none; }
+    nav a:hover, nav a:focus-visible { text-decoration: underline; }
+    .root {
+      margin: 28px auto 0;
+      width: min(760px, 100%);
+      padding: 20px 22px;
+      text-align: center;
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      border-radius: 6px;
+    }
+    .root strong { display: block; font-size: 22px; }
+    .root .formula { display: block; margin-top: 5px; font-family: Cambria, "Times New Roman", serif; }
+    .connector { width: 2px; height: 28px; margin: 0 auto; background: var(--line); }
+    .map {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .map::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 16.666%;
+      right: 16.666%;
+      height: 2px;
+      background: var(--line);
+    }
+    .branch { position: relative; padding-top: 26px; }
+    .branch::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 26px;
+      background: var(--line);
+    }
+    .branch-title {
+      margin: 0 0 10px;
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-size: 17px;
+      text-align: center;
+    }
+    .proved .branch-title { color: var(--green); background: var(--green-soft); border: 1px solid #9fc8ba; }
+    .template .branch-title { color: var(--amber); background: var(--amber-soft); border: 1px solid #d8bd7a; }
+    .open .branch-title { color: var(--red); background: var(--red-soft); border: 1px solid #d6a49c; }
+    .node-list { display: grid; gap: 9px; }
+    .node {
+      min-height: 76px;
+      padding: 12px 14px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-left-width: 4px;
+      border-radius: 6px;
+    }
+    .proved .node { border-left-color: var(--green); }
+    .template .node { border-left-color: var(--amber); }
+    .open .node { border-left-color: var(--red); }
+    .node strong { display: block; margin-bottom: 3px; font-size: 15px; }
+    .node span { color: var(--muted); font-size: 14px; }
+    .route {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+    .route h2 { margin: 0 0 14px; font-size: 20px; }
+    .route-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .route-step {
+      padding: 13px 14px;
+      background: var(--blue-soft);
+      border-left: 4px solid var(--blue);
+      border-radius: 6px;
+    }
+    .route-step b { display: block; color: var(--blue); margin-bottom: 3px; }
+    .legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 20px; color: var(--muted); font-size: 13px; }
+    .legend span { display: inline-flex; align-items: center; gap: 7px; }
+    .legend i { width: 12px; height: 12px; display: inline-block; border-radius: 2px; }
+    .legend .g { background: var(--green); }
+    .legend .a { background: var(--amber); }
+    .legend .r { background: var(--red); }
+    .legend .b { background: var(--blue); }
+    footer { margin-top: 24px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    @media (max-width: 860px) {
+      header { grid-template-columns: 1fr; align-items: start; }
+      nav { justify-content: flex-start; }
+      .map { grid-template-columns: 1fr; gap: 14px; }
+      .map::before { display: none; }
+      .branch { padding-top: 0; }
+      .branch::before { display: none; }
+      .route-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 520px) {
+      main { width: min(100% - 24px, 1180px); padding: 24px 0 40px; }
+      h1 { font-size: 26px; }
+      .root { text-align: left; }
+      .root strong { font-size: 18px; }
+      .route-grid { grid-template-columns: 1fr; }
+    }
   </style>
-  <script type="module">
-    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.0/dist/mermaid.esm.min.mjs";
-    mermaid.initialize({ startOnLoad: true, theme: "base", themeVariables: { primaryColor: "#e8f1fb", primaryTextColor: "#172033", primaryBorderColor: "#1769aa", lineColor: "#73849a", secondaryColor: "#f3f6fa", tertiaryColor: "#ffffff" } });
-  </script>
 </head>
 <body>
   <main>
     <header>
       <div>
         <h1>图的前三大邻接特征值和</h1>
-        <p>变分结构、谱极值、扰动稳定性与计算猜想</p>
+        <p class="subtitle">七章论证链、证据边界与下一步研究路线</p>
       </div>
-      <nav aria-label="资源下载">
-        <a href="./thesis.pdf">下载论文 PDF</a>
-        <a href="./论文思维导图.md">查看导图源码</a>
+      <nav aria-label="论文资源">
+        <a href="./index.html">返回发布页</a>
+        <a href="./thesis.pdf">下载论文</a>
+        <a href="./论文思维导图.md">Mermaid 源码</a>
       </nav>
     </header>
-    <section class="diagram" aria-label="论文结构思维导图">
-      <div class="mermaid">
-mindmap
-  root((图的前三大邻接特征值和))
-    problem["研究问题"]
-      objective["目标函数：前三大邻接特征值之和"]
-      asymptotic["归一化极限与谱极值"]
-      limit_exists["有限图极值比值的极限存在"]
-      global_open["全体 graphon 的六分块最优性仍为猜想"]
-      three_open["三层未解：匹配上界、等号唯一性、无条件 cut 稳定性"]
-    chapter1["第一章 绪论"]
-      background["研究背景与现状"]
-      route["难点与技术路线"]
-      results["主要结果"]
-    chapter2["第二章 预备知识"]
-      adjacency["邻接谱"]
-      kyfan["Rayleigh 商与 Ky Fan 原理"]
-      graphon_operator["Graphon 算子"]
-      c5_spectrum["C5 谱与等价划分"]
-    chapter3["第三章 有限图与 graphon"]
-      step_graphon["阶梯 graphon"]
-      scaled_spectrum["非零谱除以顶点数"]
-      zero_spectrum["无限重零特征值"]
-      approximation["0-1 有限步逼近"]
-    chapter4["第四章 极值 graphon"]
-      extremizer_exists["极值存在性"]
-      constant_exists["全局渐近常数存在且等于 graphon 最大值"]
-      isotropic_reduction["等价约化：三维各向同性正内积矩问题"]
-      stiefel_reduction["有限原子：秩三投影正部 Perron 根"]
-      finite_support_48["全局达到性：至多 48 原子，等价于紧 Stiefel(48,3) 问题"]
-      stiefel_kkt["光滑不可约有限驻点的矩阵 KKT 方程"]
-      grassmann_local["候选六原子：完整九维 Grassmann 区间局部极大证书"]
-      four_atoms["至多四原子精确上界 5/4"]
-      self_ellipsoid["全局极值分布的自支撑椭球"]
-      spectral_ellipsoid["极值特征坐标满足谱椭球等式"]
-      second_variation["支撑切空间二阶条件负性"]
-      quadratic_reconstruction["正内积胞腔内的二次重构恒等式"]
-      radial_rigidity["径向刚性：每条正射线至多一个支撑半径"]
-      algebraic_degeneracy["连续支撑要求二次固定点方程出现正维退化"]
-      forty_block_split["条件二分：谱矩阵给出证书，或存在至多 40 块极大元"]
-      atomic_candidate["六原子候选严格达到 c-star"]
-      ellipsoid_certificate["候选 zonotope 严格区间椭球证书"]
-      cross_rigidity["交叉能量唯一等号与定量近等号刚性"]
-      cross_rate["平方耦合距离 O(sqrt(D))"]
-      candidate_rays["候选六条接触正射线：类内自能量上界、唯一等号与定量稳定性"]
-      polarization_gap["自能量缺口精确极化恒等式"]
-      rotation_obstruction["固定方向交叉亏损存在正交旋转障碍"]
-      orbit_alignment["正交轨道化交叉亏损：精确极化与交叉刚性"]
-      bridge_inequality["轨道桥接与全局匹配上界精确等价"]
-      conditional_negativity_counterexample["六点轴向分布排除全局条件负性捷径"]
-      coarse_bound["匹配上界仍未证明"]
-      third_positive["第三个正谱方向"]
-      sign_condition["灵敏度核符号条件"]
-      tie_breaking["零水平集二级选择"]
-    chapter5["第五章 clique-C5 blow-up"]
-      quotient["商矩阵与完整谱"]
-      fourier["Fourier 分解"]
-      cycle_spectrum["完全核心加平衡环外围的完整谱"]
-      cycle_choice["环长度选择：C5 在受限模型族中唯一最优"]
-      diagonal["对角密度单调性"]
-      trace_norm["非平衡六分块迹范数表示"]
-      global_concavity["块测度目标的全局凹性"]
-      boundary["测度单纯形边界排除"]
-      kkt["内部 KKT 方程完备分类"]
-      alpha["最优核心比例 alpha-star"]
-      quadratic["平衡直线全局二次稳定性"]
-      local_stability["完整五维解析局部稳定性"]
-      unique_max["六分块类内唯一全局极大点"]
-      radial_balancing["非平衡测度径向严格平衡化"]
-      global_stability["完整单纯形全局二次稳定性"]
-      five_block_bound["全部带环五分块模板：统一上界 (4+sqrt(6))/5"]
-      inertia_filter["五阶值超过 5/4：正惯性必须恰为三"]
-      c4_exclusion["K1 join C4 五类模板：精确上界 c4 小于 c-star"]
-      general_template_kkt["一般六模板内点 KKT：活动 Ky Fan 次梯覆盖重根"]
-      unresolved_boundary["十三类边界严格退化到至多五块，值不超过 c4"]
-      uniform_collar["统一边界领：任一 d_i≤1/1300 时严格低于 c-star"]
-      wide_collars["原十二残余模板：72/72 个坐标领加强到 d_k≤1/100"]
-      exceptional_faces["四个原例外面：1/60 辅助领或 07e 第四正特征值扣除"]
-      local_kyfan_box["局部 Ky Fan--Fidelity 盒引理：每个叶盒给出仿射严格上界"]
-      global_03bc_bound["03bc：31,610 叶盒精确有理证书，严格低于 2563/2000"]
-      semialgebraic_strata["十三类支持面半代数分层：谱隙与重根分支"]
-      interval_completeness["严格区间完备性接口已列出，但全覆盖尚未完成"]
-      complement_data["十三类补图边集与自同构轨道精确分类"]
-      matching_reduction["3dfe：T=J6-P，秩一--三匹配分块与六变量 secular 方程"]
-      global_3dfe_bound["3dfe 一般六维：Perron--Bernstein 精确证书，严格小于 32/25"]
-      symmetric_slice["3dfe 等对缺边一参数切片：精确最大值低于 c4"]
-      two_balanced_split["3dfe 双平衡对--单分裂对：全局上界 c4"]
-      imbalance_collar["3dfe 平方根不平衡量≤1/2500：局部领严格排除"]
-      prism_reduction["1bbc：三角柱 2x2 三阶块分解；等匹配对测度时降为两个 3x3 矩阵"]
-      prism_slice["1bbc 对称三元切片：分段谱公式与严格低于 c4 的受限证书"]
-      structural_limit["其余十一类的结构约化降低代数复杂度，但尚非全局上界证明"]
-      six_cell_template["六类符号模板：上界、唯一等号与定量 cut 稳定性"]
-      template_scope["前提：分布已具有候选六类正负内积结构"]
-      finite_error["有限阶显式误差"]
-    chapter6["第六章 一般上界"]
-      general_bound["一般图线性上界"]
-      strict_gap["粗上界严格不可达：c3 小于 (1+sqrt(3))/2"]
-      barycenter["候选能量对象的重心平方至少约 0.831086"]
-      bipartite_bound["二部图奇异值上界"]
-      gap["全局渐近常数的上下界区间"]
-    chapter7["第七章 扰动稳定性"]
-      matrix_bound["矩阵 Ky Fan 界"]
-      edit_distance["编辑距离"]
-      graphon_l2["Graphon L2 连续性"]
-      expansion["双边有限阶展开"]
-      value_structure["值稳定不等于结构稳定"]
-    chapter8["第八章 计算与后续问题"]
-      small_cases["小阶复核"]
-      unbalanced["非平衡搜索"]
-      hessian["六分块 Hessian 精确符号证书"]
-      stiefel_hessian["完整 Grassmann 图表 Hessian：严格区间证书与高精度复核"]
-      random_search["随机搜索"]
-      five_topologies["1024 个带环五阶标号模板数值探路：最高样本为 K1 join C4"]
-      numerical_scope["数值枚举不提供驻点完备性或严格区间上界"]
-      six_template_status["六原子 156 类：统一证书 143 类，另排除 3dfe 与 03bc，共闭合 145 类、未解 11 类"]
-      twin_audit["13 个统一残余无真孪生；3dfe 与 03bc 已分别排除"]
-      kkt_audit["固定种子 KKT 审计：最优运行贴近边界，仍非严格排除"]
-      stationary_search["原十二模板光滑 KKT 侦察：均见正 Hessian 方向，但完备性未证"]
-      conjectures["全局与离散结构猜想"]
-      moment_conjecture["各向同性匹配不等式与等号刚性"]
-      conditional_reduction["条件推出六分块分类"]
-      three_global_levels["开放问题 8.3：三个全局未解层次"]
-      sign_partition_route["首要结构目标：极值或近极值分布存在候选六类符号分拆"]
-      conditional_stability["全局唯一性条件推出定性 cut 稳定性"]
-      degeneracy_route["后续首要结构目标：分类二次重构映射的正维退化分支"]
-      finite_reduction_route["有限路线：谱椭球证书或至多 40 块分支"]
-      kkt_interval_route["模板路线：十一类先作直接 Ky Fan 盒覆盖，失败区域再做 KKT"]
-      sign_graph_route["固定阶路线：按符号图分类有限 KKT 系统"]
-      rate_open["显式稳定速率仍未解决"]
-    evidence["证据等级"]
-      proved["已证明结论"]
-      conditional["条件结论"]
-      symbolic["精确符号证书"]
-      computation["计算证据"]
-      interval["严格有理区间证书"]
-      open_conjecture["未决猜想"]
-    constants["核心常数"]
-      alpha_value["最优核心比例约为 0.197272"]
-      candidate_value["候选渐近常数约为 1.281568"]
-      correction["有限阶目标含精确修正项 -3"]
-      lower_bound["C5 blow-up 给出全体图的显式下界"]
-      cycle_unique["C5 是平衡环族唯一最优长度"]
-      boundary_gap["六分块边界与候选值有严格间隙"]
-      five_atom_gap["五原子精确最大值 c4约1.253197，严格低于候选值约1.281568"]
-      global_unknown["全局最优性仍待证明"]
-      exact_gap["未决：自能量上界与等号唯一性"]
-      structural_gap["未决：把任意极值或近极值分布约化到候选六类符号模板"]
-      bridge_gap["精确缺口：最优旋转后 Q ≤ 2 轨道交叉亏损"]
-      stability_logic["定性 cut 稳定性依赖全局唯一极大元"]
+
+    <section class="root" aria-label="论文核心问题">
+      <strong>有限图前三大邻接特征值和的渐近极值</strong>
+      <span class="formula">S<sub>3</sub>(G) / n → 𝔠<sub>3</sub></span>
+    </section>
+    <div class="connector" aria-hidden="true"></div>
+
+    <section class="map" aria-label="论文证据层级">
+      <article class="branch proved">
+        <h2 class="branch-title">已证明的全局结果</h2>
+        <div class="node-list">
+          <div class="node"><strong>第一至三章</strong><span>从基础文献出发，建立有限图与 graphon 的完整谱对应，并证明极限存在。</span></div>
+          <div class="node"><strong>第四章</strong><span>等价化为三维各向同性矩问题；推出符号条件、自支撑椭球、谱椭球和二次重构。</span></div>
+          <div class="node"><strong>第五章</strong><span>用八个正交锥、Carathéodory 与团块克隆，证明存在至多 48 步的全局极值元。</span></div>
+          <div class="node"><strong>第七章</strong><span>应用已知投影常数定理，得到 S<sub>3</sub>(G) ≤ (3+√5)n/4 − 3。</span></div>
+        </div>
+      </article>
+
+      <article class="branch template">
+        <h2 class="branch-title">固定六块模板内</h2>
+        <div class="node-list">
+          <div class="node"><strong>第六章候选</strong><span>计算平衡 clique-C<sub>5</sub> blow-up 的完整谱和最优核心比例。</span></div>
+          <div class="node"><strong>全测度优化</strong><span>允许六个块测度独立变化，把目标写成迹范数并证明全局凹性。</span></div>
+          <div class="node"><strong>KKT 与边界</strong><span>内部驻点只有平衡点；边界严格低于候选值。</span></div>
+          <div class="node"><strong>模板内结论</strong><span>平衡测度唯一全局最优，并具有二次稳定性；该结论不能外推到全部 graphon。</span></div>
+        </div>
+      </article>
+
+      <article class="branch open">
+        <h2 class="branch-title">仍未证明的全局问题</h2>
+        <div class="node-list">
+          <div class="node"><strong>匹配上界</strong><span>尚未证明 𝔠<sub>3</sub> ≤ c<sub>*</sub>，故 𝔠<sub>3</sub> = c<sub>*</sub> 仍是猜想。</span></div>
+          <div class="node"><strong>结构约化</strong><span>尚未证明任意全局极值 graphon 必须具有 clique-C<sub>5</sub> 六块符号模板。</span></div>
+          <div class="node"><strong>等号唯一性</strong><span>达到候选值的各向同性分布是否模正交变换唯一，仍待证明。</span></div>
+          <div class="node"><strong>cut 稳定性</strong><span>定性结论依赖全局上界与唯一性；显式稳定速率需要额外定量刚性。</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="route" aria-label="下一步研究路线">
+      <h2>下一步研究路线</h2>
+      <div class="route-grid">
+        <div class="route-step"><b>1. 耦合不等式</b>联合控制 s<sup>T</sup>Ps 与 s<sup>T</sup>|P|<sub>e</sub>s。</div>
+        <div class="route-step"><b>2. 近极值窗口</b>绝对投影项 &gt; 1.5631363937，且 Perron 向量距 Ran(P) &lt; 0.20573。</div>
+        <div class="route-step"><b>3. 结构分类</b>排除二次重构固定点系统的正维退化。</div>
+        <div class="route-step"><b>4. 严格认证</b>对有限残余使用三阶外代数、SOS 或区间算术。</div>
       </div>
     </section>
-    <footer>固定下载地址：本目录中的文件名保持不变即可持续更新内容。</footer>
+
+    <div class="legend" aria-label="颜色说明">
+      <span><i class="g"></i>全局已证明</span>
+      <span><i class="a"></i>固定模板内</span>
+      <span><i class="r"></i>开放问题</span>
+      <span><i class="b"></i>研究路线</span>
+    </div>
+
+    <footer>精确公式、假设和来源以论文正文为准。当前版本：2026-09-08。</footer>
   </main>
 </body>
 </html>
